@@ -45,17 +45,21 @@ def topkFrequent(nums, k):
 
     # create a list of list to store the elements i.e the buckets
     freq = [[] for i in range(len(nums)+1)]
+    #freq[0], freq[1], freq[2]...freq[n] where n is len(nums)
 
     for num in nums:
         count[num] = 1+ count.get(num, 0)
     
     for num, cnt in count.items():
         freq[cnt].append(num)
+        # eg: num = 2, cnt = 3
+        # freq[3].append(2)
 
     res = []
     for i in range(len(freq)-1, 0,-1):
-        for num in freq[i]:
-            res.append(num)
+        # iterate from the end to get the most frequent elements first
+        for num in freq[i]: # iterate through each bucket
+            res.append(num) # add the elements to the result
             if len(res) == k:
                 return res
 
