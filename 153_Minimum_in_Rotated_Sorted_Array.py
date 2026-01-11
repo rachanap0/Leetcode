@@ -32,3 +32,12 @@ def findMin_binary_search(nums):
 #Example usage
 nums = [3,4,5,6,2]
 print(findMin_binary_search(nums))  # Output: 1
+
+# Method 3: Using built-in functions
+# TC: O(n)
+# SC: O(1)
+def findMin_builtin(nums):
+    return sorted(nums)[0]
+#Example usage
+nums = [4,5,6,7,0,1,2]
+print(findMin_builtin(nums))  # Output: 0   
